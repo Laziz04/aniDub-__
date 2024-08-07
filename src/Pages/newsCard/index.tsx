@@ -31,10 +31,7 @@ const Newcard: React.FC = () => {
         <div className="absolute top-1/2 right-0 transform -translate-y-1/2 px-4">
           <button onClick={nextSlide} className="bg-black text-white px-4 py-2 rounded-full">
             ›
-          </button>
-          <button onClick={nextSlide} className="bg-black text-white px-4 py-2 rounded-full">
-            ›
-          </button>
+          </button> 
         </div>
       </Card>
     </div>
