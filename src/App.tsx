@@ -26,8 +26,7 @@ function App() {
       <Newcard /> {/* Islom */}
       <Cards /> {/* Abdulaziz */}
       <News /> {/* Asil */}
-      <Footer />
-      {/* Lobar */}
+      <Footer />{/* Lobar */}
     </div>
   );
 }
