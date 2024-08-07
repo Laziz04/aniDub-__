@@ -32,6 +32,9 @@ const Newcard: React.FC = () => {
           <button onClick={nextSlide} className="bg-black text-white px-4 py-2 rounded-full">
             ›
           </button>
+          <button onClick={nextSlide} className="bg-black text-white px-4 py-2 rounded-full">
+            ›
+          </button>
         </div>
       </Card>
     </div>
