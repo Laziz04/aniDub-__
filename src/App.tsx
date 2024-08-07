@@ -25,7 +25,7 @@ function App() {
       <Filter /> {/* Islom */}
       <Newcard /> {/* Islom */}
       <Cards /> {/* Abdulaziz */}
-      <News /> {/* Asil */}
+      <News /> {/* Asilbek */}
       <Footer />
       {/* Lobar */}
     </div>
