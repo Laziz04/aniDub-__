@@ -5,8 +5,6 @@ import { FaChevronRight } from "react-icons/fa6";
 const images = [
   "https://www.youtube.com/embed/JruhSM_G5g4",
   "https://www.youtube.com/embed/ryrclNQl5PU",
-  "https://www.youtube.com/embed/9G8Q5ycM2sc",
-  "https://www.youtube.com/embed/ZYcdI99GmUM",
 ];
 
 const Newcard: React.FC = () => {
@@ -70,7 +68,7 @@ const Newcard: React.FC = () => {
                   borderRadius: "10px",
                 }}
                 width="600"
-                height="300"
+                height="320"
                 src={images[currentIndex]}
                 title="Anime Video"
                 frameBorder="0"
