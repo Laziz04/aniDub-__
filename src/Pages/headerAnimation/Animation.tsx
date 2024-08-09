@@ -3,7 +3,7 @@ import axios from "axios";
 import "tailwindcss/tailwind.css";
 import "./animation.css";
 
-const Slider = () => {
+const Animation = () => {
   const [slides, setSlides] = useState<any[]>([]);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -92,4 +92,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default Animation;
