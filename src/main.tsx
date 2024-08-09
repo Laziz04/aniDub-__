@@ -1,5 +1,5 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import Animation from "./Pages/headerAnimation/Animation";
+import Animation from "./Pages/animation/Animation";
 import Cards from "./Pages/cards/Cards";
 import Filter from "./Pages/filterButton/Filter";
 import Footer from "./Pages/footer/Footer";

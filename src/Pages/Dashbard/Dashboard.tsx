@@ -2,7 +2,7 @@ import { Input } from "antd";
 import { useState } from "react";
 import "../Dashbard/dashboard.css";
 import { NavLink } from "react-router-dom";
-import Animation from "../headerAnimation/Animation";
+import Animation from "../animation/Animation";
 
 const AnidubDashboard = () => {
   const [name, setName] = useState("");
