@@ -6,7 +6,7 @@ import Footer from "./Pages/footer/Footer";
 import Navbar from "./Pages/Menu_layout/Layout";
 import NewsCard from "./Pages/newsCard/Newcard";
 import News from "./Pages/News/News";
-import AnidubDashboard from "./Pages/Dashbard/Dashboard";
+import AnidubDashboard from "./Pages/Dashbardlogin/DashboardLOgin";
 
 const Main = () => {
   const location = useLocation();

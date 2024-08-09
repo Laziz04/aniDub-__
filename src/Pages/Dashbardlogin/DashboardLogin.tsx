@@ -1,6 +1,6 @@
 import { Input } from "antd";
 import { useState } from "react";
-import "../Dashbard/dashboard.css";
+import "./dashboard.css";
 import { NavLink } from "react-router-dom";
 import Animation from "../animation/Animation";
 
