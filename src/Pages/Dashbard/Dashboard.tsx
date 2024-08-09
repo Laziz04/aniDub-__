@@ -1,8 +1,7 @@
 import { Input } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./dashboard.css";
-import { NavLink } from "react-router-dom";
-import Animation from "../animation/Animation";
+import OpenDashboard from "../openDashboard/openDashboard";
 
 const AnidubDashboard = () => {
   const [name, setName] = useState("");
@@ -14,8 +13,20 @@ const AnidubDashboard = () => {
       setName("");
       setPassword("");
       setnextpage(true);
+      localStorage.setItem(`${name} Admen pagega kirdi`, "");
     }
   };
+
+  useEffect(() => {
+    const savedNextpage = localStorage.getItem("nextpage");
+    if (savedNextpage) {
+      setnextpage(JSON.parse(savedNextpage));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("nextpage", JSON.stringify(nextpage));
+  }, [nextpage]);
 
   return (
     <div
@@ -111,7 +122,7 @@ const AnidubDashboard = () => {
           </div>
         </div>
       ) : (
-        <Animation />
+        <OpenDashboard />
       )}
     </div>
   );
