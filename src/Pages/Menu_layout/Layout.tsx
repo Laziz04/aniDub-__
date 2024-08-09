@@ -281,7 +281,7 @@ const Navbar = () => {
                     marginTop: "200px",
                     width: "200px",
                     borderRadius: "20px",
-                  }} // Adjust if needed
+                  }}
                 >
                   <div className="relative ps-4 max-h-60 overflow-auto">
                     <ul>
@@ -306,113 +306,6 @@ const Navbar = () => {
           )}
         </div>
       </div>
-
-      {/* Sign Up Modal */}
-      <Modal
-        open={openSignModal}
-        onClose={closeSignUpModal}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <div className=" modalStyle">
-          <div className="backdropStyle">
-            <button
-              onClick={closeSignUpModal}
-              style={{
-                position: "absolute",
-                top: "5px",
-                right: "5px",
-                color: "#319795",
-              }}
-            >
-              <IoClose />
-            </button>
-
-            <img
-              src="https://i.pinimg.com/564x/57/ca/98/57ca981288bb93099699264eed00dddd.jpg"
-              alt="Top image"
-              className="w-full h-32 mb-4 object-cover rounded-lg shadow-md"
-            />
-            <input
-              className="input_style"
-              value={name}
-              placeholder="Isminggizni kiriting..."
-              onChange={(e) => setName(e.target.value)}
-            />
-            <input
-              className="input_style"
-              value={phone}
-              placeholder="Telefon raqamingizni kiriting..."
-              onChange={(e) => setPhone(e.target.value)}
-            />
-            <input
-              className="input_style"
-              type="password"
-              value={password}
-              placeholder="Yangi parolni kiriting..."
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <input
-              className="input_style"
-              type="password"
-              value={repeatPassword}
-              placeholder="Parolni qayta kiriting..."
-              onChange={(e) => setRepeatPassword(e.target.value)}
-            />
-
-            <Button
-              type="primary"
-              block
-              onClick={handleSubmit}
-              className="custom-button"
-            >
-              Ro'yxatdan o'tish
-            </Button>
-
-            <p color="white" className="mt-2">
-              Yoki
-            </p>
-            <p color="white" style={{ marginTop: "1rem" }}>
-              Hisobingiz yo‘q
-              <button
-                onClick={openSignUpModal}
-                className="text-blue-400 underline"
-              >
-                tizimga kirish
-              </button>
-            </p>
-          </div>
-        </div>
-      </Modal>
-
-      {/* Profile Modal */}
-      <Modal
-        open={openProfileModal}
-        onClose={closeProfile}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <div className="modalStyle">
-          <div className="backdropStyle">
-            <p style={{ marginBottom: "1rem", color: "#2b6cb0" }}>{name}</p>
-            <hr className="w-full border-t border-gray-300 my-2" />
-            <button
-              className="flex items-center gap-2 px-4 py-2 mb-2 w-full text-teal-500 hover:bg-gray-100 rounded-lg"
-              onClick={goToProfile}
-            >
-              <img className="w-6 h-6 rounded-full" src={user} alt="Profile" />
-              Profil
-            </button>
-            <button
-              className="flex items-center gap-2 px-4 py-2 w-full text-red-500 hover:bg-gray-100 rounded-lg"
-              onClick={handleLogout}
-            >
-              <img className="w-6 h-6 rounded-full" src={exit} alt="Logout" />
-              Chiqish
-            </button>
-          </div>
-        </div>
-      </Modal>
       <ToastContainer />
     </nav>
   );
