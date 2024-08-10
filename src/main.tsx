@@ -3,7 +3,7 @@ import Animation from "./Pages/headerAnimation/Animation";
 import Cards from "./Pages/cards/Cards";
 import Filter from "./Pages/filterButton/Filter";
 import Footer from "./Pages/footer/Footer";
-import Navbar from "./Pages/Menu_layout/Layout";
+import Navbar from "./Pages/Mene/Layout";
 import NewsCard from "./Pages/newsCard/Newcard";
 import News from "./Pages/News/News";
 import AnidubDashboard from "./Pages/Dashbard/Dashboard";
