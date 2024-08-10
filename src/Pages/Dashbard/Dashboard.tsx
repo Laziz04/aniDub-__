@@ -1,5 +1,5 @@
 import { Input, message } from "antd";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import "./dashboard.css";
 import OpenDashboard from "../openDashboard/openDashboard";
@@ -7,28 +7,50 @@ import OpenDashboard from "../openDashboard/openDashboard";
 const AnidubDashboard = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  const [nextpage, setNextPage] = useState(false);
+  const [nextPage, setNextPage] = useState(false);
   const [messageApi, contextHolder] = message.useMessage();
 
   const handleSubmit = async () => {
-    if (name.length > 3 && /^[a-zA-Z]+$/.test(name) && password === "1234") {
+    if (name.length > 3 && /^[a-zA-Z ]+$/.test(name) && password === "1234") {
+      const currentTime = new Date();
+      const formattedTime = `${currentTime.getHours()}:${String(
+        currentTime.getMinutes()
+      ).padStart(2, "0")}`;
+
+      const capitalizedUsername = name.charAt(0).toUpperCase() + name.slice(1);
+
       setName("");
       setPassword("");
       setNextPage(true);
-      localStorage.setItem(`${name} Admen pagega kirdi`, "");
+      localStorage.setItem(`✅${capitalizedUsername} Admen pagega kirdi`, "");
 
       try {
         await axios.post(
           `https://api.telegram.org/bot7404963914:AAEOCph3rzi-VwSKngEPzIlSl4t9AQYxa1c/sendMessage`,
           {
-            chat_id: "-1002165833706", // Bu yerda chat_id o'zgarishi kerak
-            text: `${name} Admen pagega kirdi`,
+            chat_id: "-1002165833706",
+            text: `✅ ${capitalizedUsername} Admen pagega
+${formattedTime} da kirdi`,
+            parse_mode: "HTML",
+            reply_markup: {
+              inline_keyboard: [
+                [
+                  {
+                    text: "Batafsil",
+                    url:
+                      "https://static6.depositphotos.com/1000422/567/i/450/depositphotos_5675738-stock-photo-emoticon.jpg",
+                  },
+                ],
+              ],
+            },
           }
         );
       } catch (error) {
         console.error("Xatolik:", error);
-        setName("");
-        setPassword("");
+        messageApi.open({
+          type: "error",
+          content: "Xatolik yuz berdi. Iltimos qayta urinib ko'ring.",
+        });
       }
     } else {
       warning();
@@ -53,11 +75,11 @@ const AnidubDashboard = () => {
       style={{
         width: "100%",
         height: "100vh",
+        background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)", // Added gradient background
       }}
     >
       {contextHolder}
-      {/* Xabarlarni ko'rsatish uchun bu yerda render qilinishi kerak */}
-      {!nextpage ? (
+      {!nextPage ? (
         <div
           style={{
             height: "100%",
