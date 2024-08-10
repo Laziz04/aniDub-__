@@ -30,17 +30,6 @@ const AnidubDashboard = () => {
     }
   };
 
-  useEffect(() => {
-    const savedNextPage = localStorage.getItem("nextpage");
-    if (savedNextPage) {
-      setNextPage(JSON.parse(savedNextPage));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("nextpage", JSON.stringify(nextpage));
-  }, [nextpage]);
-
   return (
     <div
       className="background"
