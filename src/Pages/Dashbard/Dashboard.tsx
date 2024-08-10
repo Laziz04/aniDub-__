@@ -1,4 +1,4 @@
-import { Input } from "antd";
+import { Input, message } from "antd";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./dashboard.css";
@@ -8,9 +8,10 @@ const AnidubDashboard = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [nextpage, setNextPage] = useState(false);
+  const [messageApi, contextHolder] = message.useMessage();
 
   const handleSubmit = async () => {
-    if (name !== "" && password === "1234") {
+    if (name.length > 3 && /^[a-zA-Z]+$/.test(name) && password === "1234") {
       setName("");
       setPassword("");
       setNextPage(true);
@@ -26,8 +27,24 @@ const AnidubDashboard = () => {
         );
       } catch (error) {
         console.error("Xatolik:", error);
+        setName("");
+        setPassword("");
       }
+    } else {
+      warning();
     }
+  };
+
+  const warning = () => {
+    messageApi.open({
+      type: "warning",
+      content: "Isminggiz yoki parol xato",
+      style: {
+        marginTop: "10px",
+        marginRight: "10px",
+        textAlign: "right",
+      },
+    });
   };
 
   return (
@@ -38,6 +55,8 @@ const AnidubDashboard = () => {
         height: "100vh",
       }}
     >
+      {contextHolder}
+      {/* Xabarlarni ko'rsatish uchun bu yerda render qilinishi kerak */}
       {!nextpage ? (
         <div
           style={{
