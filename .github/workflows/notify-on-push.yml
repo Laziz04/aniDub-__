@@ -1,0 +1,22 @@
+name: Notify on Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Send notification
+        run: |
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer 7404963914:AAEOCph3rzi-VwSKngEPzIlSl4t9AQYxa1c" \
+            -d '{"text": "GitpUsh repozitoriyaga yangi push amalga oshirildi!"}' \
+            https://your-bot-endpoint.com/notify
