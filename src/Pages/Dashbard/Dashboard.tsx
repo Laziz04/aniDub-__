@@ -1,26 +1,39 @@
 import { Input } from "antd";
 import { useEffect, useState } from "react";
+import axios from "axios";
 import "./dashboard.css";
 import OpenDashboard from "../openDashboard/openDashboard";
 
 const AnidubDashboard = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  const [nextpage, setnextpage] = useState(false);
+  const [nextpage, setNextPage] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (name !== "" && password === "1234") {
       setName("");
       setPassword("");
-      setnextpage(true);
+      setNextPage(true);
       localStorage.setItem(`${name} Admen pagega kirdi`, "");
+
+      try {
+        await axios.post(
+          `https://api.telegram.org/bot7404963914:AAEOCph3rzi-VwSKngEPzIlSl4t9AQYxa1c/sendMessage`,
+          {
+            chat_id: "-1002165833706", // Bu yerda chat_id o'zgarishi kerak
+            text: `${name} Admen pagega kirdi`,
+          }
+        );
+      } catch (error) {
+        console.error("Xatolik:", error);
+      }
     }
   };
 
   useEffect(() => {
-    const savedNextpage = localStorage.getItem("nextpage");
-    if (savedNextpage) {
-      setnextpage(JSON.parse(savedNextpage));
+    const savedNextPage = localStorage.getItem("nextpage");
+    if (savedNextPage) {
+      setNextPage(JSON.parse(savedNextPage));
     }
   }, []);
 
