@@ -38,7 +38,7 @@ const TREYLERLAR = () => {
   };
 
   const totalCards = sliderData.length;
-  const visibleCards = 3;
+  const visibleCards = 4;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -66,17 +66,27 @@ const TREYLERLAR = () => {
   );
 
   return (
-    <div className="flex justify-center bg-darkBlue">
+    <div className="flex justify-center">
       <div className="container py-5">
         {contextHolder}
-        <h2 className=" text-start mb-4">YANGI MAVSUM - TREYLERLAR</h2>
+        <div className=" flex items-center justify-between ">
+          <h2 className=" text-start mb-4">YANGI MAVSUM - TREYLERLAR</h2>
+          <div className=" flex items-center gap-4">
+            <FaAngleLeft
+              className="text-blue-400 cursor-pointer"
+              onClick={handlePrev}
+              size={26}
+            />
+            <FaChevronRight
+              className=" text-blue-400 cursor-pointer"
+              onClick={handleNext}
+              size={26}
+            />
+          </div>
+        </div>
+        <div className="border"></div>
         {/* Slider */}
-        <div className="relative flex items-center gap-4">
-          <FaAngleLeft
-            className="absolute -left-10 z-10 text-blue-400 cursor-pointer"
-            onClick={handlePrev}
-            size={26}
-          />
+        <div className="flex items-center gap-4 justify-between p-0 m-0">
           <div className="slider flex space-x-4 mx-auto">
             {visibleSliderData.map((slide, index) => (
               <div
@@ -101,12 +111,8 @@ const TREYLERLAR = () => {
               </div>
             ))}
           </div>
-          <FaChevronRight
-            className="absolute -right-10 z-10 text-blue-400 cursor-pointer"
-            onClick={handleNext}
-            size={26}
-          />
         </div>
+        <div className="border mt-5"></div>
       </div>
     </div>
   );
