@@ -3,6 +3,8 @@ import axios from "axios";
 import { FaChevronRight, FaAngleLeft } from "react-icons/fa";
 import "../trylerlar/css.css";
 import { message } from "antd";
+import { AiFillLeftCircle } from "react-icons/ai";
+import { FaCircleChevronRight } from "react-icons/fa6";
 
 interface SliderItem {
   img: string;
@@ -72,12 +74,12 @@ const TREYLERLAR = () => {
         <div className=" flex items-center justify-between ">
           <h2 className=" text-start mb-4">YANGI MAVSUM - TREYLERLAR</h2>
           <div className=" flex items-center gap-4">
-            <FaAngleLeft
+            <AiFillLeftCircle
               className="text-blue-400 cursor-pointer"
               onClick={handlePrev}
-              size={26}
+              size={31}
             />
-            <FaChevronRight
+            <FaCircleChevronRight
               className=" text-blue-400 cursor-pointer"
               onClick={handleNext}
               size={26}
