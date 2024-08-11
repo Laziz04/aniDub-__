@@ -68,7 +68,12 @@ const TREYLERLAR = () => {
   );
 
   return (
-    <div className="flex justify-center">
+    <div
+      style={{
+        marginTop: "40px",
+      }}
+      className="flex justify-center"
+    >
       <div className="container py-5">
         {contextHolder}
         <div className=" flex items-center justify-between ">

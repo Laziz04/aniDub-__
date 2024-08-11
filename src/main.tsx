@@ -21,7 +21,7 @@ const Main = () => {
       {!isDashboard && <NewsCard />} {/* Islom */}
       {!isDashboard && <Cards />} {/* Abdulaziz */}
       {!isDashboard && <TREYLERLAR />} {/*Abdulaziz  */}
-      {!isDashboard && <News />} {/* Asilbek */}
+      {/* {!isDashboard && <News />} Asilbek */}
       {!isDashboard && <Footer />} {/* Lobar */}
       <Routes>
         <Route path="/dashboard" element={<AnidubDashboard />} />

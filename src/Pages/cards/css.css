@@ -1,0 +1,45 @@
+.Cardss {
+  width: 280px;
+  height: auto;
+  border-radius: 10px;
+  z-index: -3;
+}
+
+.Cardss img {
+  width: 100%;
+  height: 254px !important;
+  border-radius: 13px 13px 0 0;
+  margin-bottom: 10px;
+  object-fit: cover;
+  z-index: -3;
+}
+
+.card_body {
+  margin-top: -20px;
+  height: 130px;
+  background: #101118;
+  color: white;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 0 0 13px 13px;
+  z-index: 99;
+}
+
+.title {
+  max-width: 160px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+.eye {
+  color: #0b95ff;
+  font-size: 24px;
+}
+
+.money {
+  background: linear-gradient(180deg, #ffcc14 0%, #ffe27c 100%);
+  border-radius: 5px;
+  width: 60px;
+  margin-top: 20px;
+}
