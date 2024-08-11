@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { FaChevronRight, FaAngleLeft } from "react-icons/fa";
 import "../trylerlar/css.css";
 import { message } from "antd";
 import { AiFillLeftCircle } from "react-icons/ai";
 import { FaCircleChevronRight } from "react-icons/fa6";
+import { FaRegCirclePlay } from "react-icons/fa6";
 
 interface SliderItem {
   img: string;
@@ -91,10 +91,7 @@ const TREYLERLAR = () => {
         <div className="flex items-center gap-4 justify-between p-0 m-0">
           <div className="slider flex space-x-4 mx-auto">
             {visibleSliderData.map((slide, index) => (
-              <div
-                key={index}
-                className="slider-card transition-all duration-500 ease-in-out transform hover:scale-105"
-              >
+              <div key={index} className="slider-card relative">
                 <img
                   style={{
                     width: "100%",
@@ -104,11 +101,22 @@ const TREYLERLAR = () => {
                     objectFit: "cover",
                     objectPosition: "center",
                     transition: "ease-in-out",
-                    cursor: "pointer",
                   }}
                   src={slide.img}
                   alt="anime"
                   className="slider-image"
+                />
+                <FaRegCirclePlay
+                  className="transition-all duration-500 ease-in-out transform hover:scale-105"
+                  style={{
+                    fontSize: "24px",
+                    color: "#fff",
+                    position: "absolute",
+                    bottom: "95px",
+                    right: "170px",
+                    transition: "ease-in-out",
+                    cursor: "pointer",
+                  }}
                 />
               </div>
             ))}
