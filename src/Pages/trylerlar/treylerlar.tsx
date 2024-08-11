@@ -45,7 +45,7 @@ const TREYLERLAR = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 4000); // Intervalni sekinroq qilish uchun 5 sekund qiling
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [totalCards]);

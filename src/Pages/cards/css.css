@@ -5,24 +5,47 @@
   z-index: -3;
 }
 
-.Cardss img {
+.img_respons {
   width: 100%;
   height: 254px !important;
-  border-radius: 13px 13px 0 0;
+  border-radius: 8px 8px 0 0;
   margin-bottom: 10px;
   object-fit: cover;
   z-index: -3;
 }
 
+.roundeed_respons {
+  border-radius: 0 0 8px 8px !important;
+}
+
+.gap_respons {
+  gap: 20px;
+}
+
+@media screen and (max-width: 563px) {
+  .img_respons {
+    height: 180px !important;
+  }
+  .gap_respons {
+    gap: 10px !important;
+  }
+  .card_body {
+    height: 80px !important;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .img_respons {
+    height: 190px !important;
+  }
+}
+
 .card_body {
   margin-top: -20px;
-  height: 130px;
-  background: #101118;
-  color: white;
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 0 0 13px 13px;
+  height: 100px;
+  background: rgb(255, 255, 255);
+  padding: 30px 20px 20px 20px;
+  border-radius: 0 0 13px 13px !important;
   z-index: 99;
 }
 
@@ -42,4 +65,8 @@
   border-radius: 5px;
   width: 60px;
   margin-top: 20px;
+}
+
+.pdkqwd {
+  padding: 15px;
 }

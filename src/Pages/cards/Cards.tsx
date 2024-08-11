@@ -26,29 +26,38 @@ const Cards: React.FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto mt-5 px-4">
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+    <div
+      style={{
+        padding: "15px",
+      }}
+      className="container mx-auto mt-5 "
+    >
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap_respons">
         {cards.slice(0, 10).map((item) => (
           <div
             key={item.id}
-            className="shadow-lg rounded-lg overflow-hidden Cardss"
+            className="shadow-lg overflow-hidden bg-white roundeed_respons"
           >
-            <img src={item.img} alt={item.name} />
+            <img
+              src={item.img}
+              alt={item.name}
+              className="w-full object-cover img_respons"
+            />
 
             <div className="card_body">
-              <h2 className="text-xl font-bold mb-2 text-sm lg:text-xl">
+              <h2 className="text-sm font-bold mb-1 truncate lg:text-base">
                 {item.name}
               </h2>
-              <div className="flex justify-between items-center mt-5">
-                <div className="flex items-center gap-2 ">
-                  <TbEye className="text-lg text-[#0b95ff]" />
+              <div className="flex justify-between items-center mt-2">
+                <div className="flex items-center gap-1">
+                  <TbEye className="text-md text-[#0b95ff]" />
                   <span className="text-gray-600 text-xs lg:text-sm">
                     {item.eye}
                   </span>
                 </div>
-                <button className="bg-gradient-to-b from-[#ffcc14] to-[#ffe27c] text-black font-semibold px-2 py-1 rounded">
+                {/* <button className="bg-gradient-to-b from-[#ffcc14] to-[#ffe27c] text-black font-semibold px-2 py-1 rounded">
                   Pullik
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

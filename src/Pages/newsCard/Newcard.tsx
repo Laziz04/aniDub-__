@@ -1,6 +1,6 @@
 const NewsCard = () => {
   return (
-    <div>
+    <div className=" container">
       <h1>NewsCard</h1>
     </div>
   );
