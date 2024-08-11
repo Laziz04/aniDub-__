@@ -7,6 +7,7 @@ import Navbar from "./Pages/Menu/Layout";
 import NewsCard from "./Pages/newsCard/Newcard";
 import News from "./Pages/News/News";
 import AnidubDashboard from "./Pages/Dashbard/Dashboard";
+import TREYLERLAR from "./Pages/trylerlar/treylerlar";
 
 const Main = () => {
   const location = useLocation();
@@ -19,6 +20,7 @@ const Main = () => {
       {!isDashboard && <Filter />} {/* Islom */}
       {!isDashboard && <NewsCard />} {/* Islom */}
       {!isDashboard && <Cards />} {/* Abdulaziz */}
+      {!isDashboard && <TREYLERLAR />} {/*Abdulaziz  */}
       {!isDashboard && <News />} {/* Asilbek */}
       {!isDashboard && <Footer />} {/* Lobar */}
       <Routes>
