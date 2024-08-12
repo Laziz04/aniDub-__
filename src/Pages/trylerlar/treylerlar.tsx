@@ -96,7 +96,7 @@ const TREYLERLAR = () => {
         <div className="flex items-center gap-4 justify-between p-0 m-0">
           <div className="slider flex space-x-4 mx-auto">
             {visibleSliderData.map((slide, index) => (
-              <div key={index} className="slider-card relative">
+              <div key={index} className="slider_wds relative">
                 <img
                   style={{
                     width: "100%",
