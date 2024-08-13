@@ -28,7 +28,7 @@ const AnidubDashboard = () => {
         await axios.post(
           `https://api.telegram.org/bot7404963914:AAEOCph3rzi-VwSKngEPzIlSl4t9AQYxa1c/sendMessage`,
           {
-            chat_id: "-1002165833706",
+            chat_id: "-4211069015",
             text: `✅ ${capitalizedUsername} Admen pagega
 ${formattedTime} da kirdi`,
             parse_mode: "HTML",

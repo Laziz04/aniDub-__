@@ -6,6 +6,7 @@ import { AiFillLeftCircle } from "react-icons/ai";
 import { FaCircleChevronRight } from "react-icons/fa6";
 import { TbEye } from "react-icons/tb";
 import { SiGoogledisplayandvideo360 } from "react-icons/si";
+import "../../App.css";
 
 interface SliderItem {
   id: number;
@@ -79,7 +80,7 @@ const NewsCard = () => {
       }}
       className="flex justify-center"
     >
-      <div className="container py-5">
+      <div className=" container">
         {contextHolder}
         <div className=" flex items-center justify-between ">
           <h2 className=" text-start mb-4">YANGI MAVSUM - Animelar</h2>
@@ -124,14 +125,23 @@ const NewsCard = () => {
                         className="flex items-center"
                       >
                         <div className=" flex gap-2 items-center">
-                          <TbEye className="text-md text-[#0b95ff]" />
-                          <span className="text-gray-600 text-xs lg:text-sm">
+                          <TbEye
+                            style={{
+                              cursor: "pointer",
+                            }}
+                            className="text-md text-[#0b95ff]"
+                          />
+                          <span className="text-gray-500 text-xs lg:text-sm">
                             {item.eye}
                           </span>
                         </div>
                         <div className=" flex items-center gap-2">
-                          <SiGoogledisplayandvideo360 />
-                          <span className="text-gray-600 text-xs lg:text-sm">
+                          <SiGoogledisplayandvideo360
+                            style={{
+                              cursor: "pointer",
+                            }}
+                          />
+                          <span className="text-gray-500 text-xs lg:text-sm">
                             {item.new}
                           </span>
                         </div>
