@@ -1,7 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import Animation from "./Pages/headerAnimation/Animation";
+import Animation from "./Pages/Animation/Animation";
 import Cards from "./Pages/cards/Cards";
-import Filter from "./Pages/filterButton/Filter";
+import Filter from "./Pages/filter/Filter";
 import Footer from "./Pages/footer/Footer";
 import Navbar from "./Pages/Menu/Layout";
 import NewsCard from "./Pages/newsCard/Newcard";
